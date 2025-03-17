@@ -27,7 +27,7 @@ defmodule Shader.LLM do
       "
 
       # Make the Anthropix call
-      client = Anthropix.init()
+      client = Anthropix.init(api_key: Application.get_env(:anthropix, :api_key))
 
       case Anthropix.chat(client,
              model: @model,
