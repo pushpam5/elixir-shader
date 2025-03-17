@@ -1,5 +1,3 @@
-Application.put_env(:anthropix, :api_key, System.get_env("ANTHROPIC_API_KEY"))
-
 defmodule Shader.LLM do
   @moduledoc """
   Handles interactions with the Language Learning Model for shader generation
