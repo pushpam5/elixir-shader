@@ -26,8 +26,7 @@ defmodule Shader.LLM do
       - Respond with <reason></reason><fragment_shader></fragment_shader> as xml tags
       "
 
-      # Make the Anthropix call
-      client = Anthropix.init(api_key: Application.get_env(:anthropix, :api_key))
+      client = Anthropix.init(System.get_env("ANTHROPIC_API_KEY"), receive_timeout: 30_000)
 
       case Anthropix.chat(client,
              model: @model,
